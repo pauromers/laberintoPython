@@ -2,4 +2,4 @@
 
 Paula Romero Serrano
 
-![Factory Method](factory_method.PNG)
+![Factory Method](factory_method.png)
