@@ -2,4 +2,15 @@
 #-*- coding: utf-8 -*-
 
 class Laberinto:
-    pass
+
+ 
+    def __init__(self):
+        self.habitaciones = []
+        return self
+    
+    def habitaciones(self):
+        return self.habitaciones
+
+    def agregarHabitacion(self, unaHab):
+        self.habitaciones.append(unaHab)
+        
