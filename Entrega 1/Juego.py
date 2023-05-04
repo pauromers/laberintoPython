@@ -15,6 +15,30 @@ class Juego:
     def fabricarLaberinto(self):
         laberinto = Laberinto()
         return laberinto
+    
+    def fabricarHabitacion(self, unNum):
+        hab = Habitacion(unNum)
+        return hab
+
+    def fabricarPuertaLado1Lado2(self, abierta, unaHab, otraHab):
+        puerta = Puerta(abierta, unaHab, otraHab)
+        return puerta
+
+    def fabricarPared(self):
+        return Pared()
+    
+    #Esto en entrega 2
+    # def fabricarNorte(self):
+    #     return self.norte
+    
+    # def fabricarSur(self):
+    #     return self.sur
+    
+    # def fabricarEste(self):
+    #     return self.este
+    
+    # def fabricarOeste(self):
+    #     return self.oeste
 
     def laberinto2HabitacionesFM(self):
         self.laberinto = self.fabricarLaberinto()
@@ -22,7 +46,10 @@ class Juego:
         abierta=True
         hab1 = self.fabricarHabitacion(1)
         hab2 = self.fabricarHabitacion(2)
+
         puerta = self.fabricarPuertaLado1Lado2(abierta,hab1, hab2)
+        hab1.sur = puerta
+        hab2.norte = puerta
         
         hab1.norte = self.fabricarPared()
         hab1.oeste = self.fabricarPared()
@@ -32,21 +59,9 @@ class Juego:
         hab2.oeste = self.fabricarPared()
         hab2.este = self.fabricarPared()
         
-        hab1.sur = puerta
-        hab2.norte = puerta
-        
         self.laberinto.agregarHabitacion(hab1)
         self.laberinto.agregarHabitacion(hab2)
 
-    def fabricarHabitacion(self, unNum):
-        hab = Habitacion(unNum)
-        return hab
-
-    def fabricarPuertaLado1Lado2(self,abierta, unaHab, otraHab):
-        puerta = Puerta(abierta,lado1=unaHab,lado2=otraHab)
-        return puerta
-
-    def fabricarPared(self):
-        return Pared()
+    
 
     
