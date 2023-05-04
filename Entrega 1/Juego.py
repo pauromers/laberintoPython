@@ -12,11 +12,13 @@ class Juego:
     def __init__ (self):
         self.laberinto=None
         
-
-    def fabricarLaberinto():
-        return Laberinto()
+    def fabricarLaberinto(self):
+        laberinto = Laberinto()
+        return laberinto
 
     def laberinto2HabitacionesFM(self):
+        self.laberinto = self.fabricarLaberinto()
+
         abierta=True
         hab1 = self.fabricarHabitacion(1)
         hab2 = self.fabricarHabitacion(2)
@@ -36,8 +38,6 @@ class Juego:
         self.laberinto.agregarHabitacion(hab1)
         self.laberinto.agregarHabitacion(hab2)
 
-
-
     def fabricarHabitacion(self, unNum):
         hab = Habitacion(unNum)
         return hab
@@ -50,6 +50,3 @@ class Juego:
         return Pared()
 
     
-unjuego=Juego()
-unjuego.fabricarLaberinto()
-unjuego.laberinto2HabitacionesFM()

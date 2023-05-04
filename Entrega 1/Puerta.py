@@ -15,10 +15,8 @@ class Puerta(ElementoMapa):
     def lado1(self):
         return self.lado1
 
-
     def lado2(self):
         return self.lado2
 
-        
     def entrar(self):
         print('La puerta está cerrada')
